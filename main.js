@@ -58,14 +58,13 @@ function load(category) {
 
   document.body.onload = () => {
     const photosContainer = document.querySelector('.photos');
-    const availableHeight = window.innerHeight;
     photos[category].sort(() => .5 - Math.random()).forEach(p => {
       const container = document.createElement('div');
       container.className = 'image-container';
 
       const img = document.createElement('img');
       img.src = 'photos/' + p;
-      img.style.maxHeight = 'calc(' + availableHeight + 'px - 10em)';
+      img.style.maxHeight = 'calc(' + window.innerHeight + 'px - 10em)';
 
       container.appendChild(img);
       photosContainer.appendChild(container);
@@ -73,9 +72,8 @@ function load(category) {
   };
 
   window.onresize = () => {
-    const availableHeight = window.innerHeight;
     document.querySelectorAll('img').forEach(img => {
-      img.style.maxHeight = 'calc(' + availableHeight + 'px - 10em)';
+      img.style.maxHeight = 'calc(' + window.innerHeight + 'px - 10em)';
     });
   };
 }

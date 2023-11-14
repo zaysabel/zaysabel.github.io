@@ -4,11 +4,20 @@
   font-display: swap;
 }
 
+html {
+    font-size: 10px;
+}
+
+@media (min-width: 1000px) {
+  html {
+      font-size: 16px;
+  }
+}
+
 body {
   background-color: #000;
   text-align: center;
   color: #d1d1d1;
-  font-size: 16px;
   font-family: BarlowExtraLight;
 }
 
@@ -46,16 +55,33 @@ h2 {
 .photos {
   display: flex;
   flex-direction: column;
-  padding: 0 10em 10em 10em;
+  padding: 0 1em 1em 1em;
+}
+
+@media (min-width: 1000px) {
+  .photos {
+    padding: 0 10em 10em 10em;
+  }
 }
 
 .image-container {
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   width: 100%;
 }
 
+@media (min-width: 1000px) {
+  .image-container {
+    margin-bottom: 5em;
+  }
+}
+
 img {
-  object-fit: contain;
-  border: 1em solid #d1d1d1;
   max-width: 100%;
+  border: .3em solid #d1d1d1;
+}
+
+@media (min-width: 1000px) {
+  img {
+    border: 1em solid #d1d1d1;
+  }
 }
