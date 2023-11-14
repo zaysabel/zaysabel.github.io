@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="menu">
+    <h1><a href="index.html">The Laws of Photography</a></h1>
+    <h1><a href="mostly-things.html">Mostly Things</a></h1>
+    <h1><a href="things-question-mark.html">Things?</a></h1>
+    <h1 class="active"><a href="contact.html">Contact</a></h1>
+  </div>
+  <h2 id="w">
+  </h2>
+</body>
+
+<script>
+  document.body.onload = () => {
+    document.getElementById('w').innerHTML =
+      'Zay Sabel<br/>' +
+      ['contact', '@', 'zaysabel', '.', 'com'].join('');
+  };
+</script>
+
+</html>
