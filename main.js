@@ -12,7 +12,7 @@ function load(category) {
       '20231007-0381.jpg',
       '20231009-0903.jpg',
       '20231009-0311.jpg',
-      '20231011-0013-2.jpg',
+      '20231011-0013.jpg',
       '20231020-0065.jpg',
       '20231023-0753.jpg',
       '20231020-0930.jpg',
@@ -51,8 +51,14 @@ function load(category) {
   };
   document.body.onload = () => {
     const photosContainer = document.querySelector('.photos');
+    photosContainer.innerHTML = `<svg class="loader" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <circle cx="50" cy="50" fill="none" stroke="#d1d1d1" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+      </circle>
+    </svg>`;
+
+    let photosLeftToLoad = photos[category].length - 1;
     photos[category].forEach(p => {
-      console.log(p);
       const container = document.createElement('div');
       container.className = 'image-container';
 
@@ -61,7 +67,13 @@ function load(category) {
       img.style.maxHeight = 'calc(' + window.innerHeight + 'px - 10em)';
 
       img.onload = () => {
+        container.innerHTML = '';
         container.appendChild(img);
+        photosLeftToLoad--;
+
+        if (photosLeftToLoad === 0) {
+          document.querySelector('.loader').remove();
+        }
       };
       photosContainer.appendChild(container);
     });
