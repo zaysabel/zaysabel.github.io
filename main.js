@@ -30,29 +30,29 @@ function load(category) {
       '20231020-0930.jpg',
     ],
     'mostly-things': [
-      '20231004-0164.jpg',
-      '20231009-0339.jpg',
-      '20231027-0470.jpg',
+      '20231020-0932.jpg',
       '20231102-0011.jpg',
-      '20231102-0018.jpg',
-      '20231102-0143.jpg',
-      '20231104-0058.jpg',
       '20231104-0060.jpg',
       '20231105-0462.jpg',
       '20231105-0635.jpg',
       '20231107-0057.jpg',
-      '20231109-0001.jpg',
-      '20231109-0137.jpg',
-      '20231110-0142-2.jpg',
-      '20231110-0142.jpg',
       '20231110-0163-Edit.jpg',
-      '20231110-0212.jpg',
+      '20231023-0746.jpg',
     ],
     'things-question-mark': [
+      '20231109-0001.jpg',
+      '20231104-0058.jpg',
+      '20231110-0142-2.jpg',
+      '20231110-0142.jpg',
+      '20231027-0470.jpg',
+      '20231009-0339.jpg',
+      '20231004-0164.jpg',
       '20231002-0947.jpg',
       '20231109-0230.jpg',
-      '20231020-0932.jpg',
-      '20231023-0746.jpg',
+      '20231102-0143.jpg',
+      '20231102-0018.jpg',
+      '20231110-0212.jpg',
+      '20231109-0137.jpg',
     ],
   };
 
@@ -66,8 +66,10 @@ function load(category) {
       img.src = 'photos/' + p;
       img.style.maxHeight = 'calc(' + window.innerHeight + 'px - 10em)';
 
-      container.appendChild(img);
-      photosContainer.appendChild(container);
+      img.onload = () => {
+        container.appendChild(img);
+        photosContainer.appendChild(container);
+      };
     });
   };
 
