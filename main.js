@@ -1,6 +1,6 @@
 function load(category) {
   const photos = {
-    'mostly-people': [
+    'people': [
       '20231020-0809.jpg',
       '20231023-0049.jpg',
       '20231105-1284.jpg',
@@ -17,7 +17,7 @@ function load(category) {
       '20231023-0753.jpg',
       '20231020-0930.jpg',
     ],
-    'mostly-things': [
+    'street': [
       '20231110-0163-Edit.jpg',
       '20231104-0060.jpg',
       '20231009-0092.jpg',
@@ -33,7 +33,7 @@ function load(category) {
       '20231105-0462.jpg',
       '20231105-0635.jpg',
     ],
-    'things-question-mark': [
+    'structures': [
       '20231104-0058.jpg',
       '20231109-0001.jpg',
       '20231110-0212.jpg',
