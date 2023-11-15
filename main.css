@@ -23,6 +23,7 @@ body {
   font-family: BarlowExtraLight;
   padding: 0;
   margin: 0;
+  overflow-y: scroll;
 }
 
 .menu {
