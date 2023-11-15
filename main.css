@@ -85,7 +85,7 @@ h2 {
 
 @media (min-width: 1000px) {
   .photos {
-    padding: 0 10em 10em 10em;
+    padding: 0 10em 1em 10em;
   }
 }
 
