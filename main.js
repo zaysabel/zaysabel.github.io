@@ -1,39 +1,18 @@
 function load(category) {
   const photos = {
     'people': [
-      '20231117-0454.jpg',
-      '20231023-0727.jpg',
-      '20231201-0670.jpg',
-      '20231020-0809.jpg',
-      '20231201-0831.jpg',
-      '20231005-0533.jpg',
-      '20231122-0285.jpg',
-      '20231121-0349.jpg',
-      '20231023-0049.jpg',
+      '20231023-0049-Edit.jpg',
       '20231105-1284.jpg',
-      '20231001-0580.jpg',
-    ],
-    'street': [
       '20231125-0414.jpg',
-      '20231006-0145.jpg',
-      '20231110-0163-Edit.jpg',
-      '20231104-0060.jpg',
-      '20231009-0092.jpg',
-      '20231004-0314.jpg',
-      '20231010-0259.jpg',
-      '20231102-0011.jpg',
-      '20231121-0193.jpg',
-    ],
-    'structures': [
-      '20231104-0058.jpg',
-      '20231117-0059.jpg',
-      '20231109-0001.jpg',
-      '20231110-0212.jpg',
-      '20231110-0142.jpg',
-      '20231004-0164.jpg',
-      '20231102-0143.jpg',
-      '20231102-0018.jpg',
-      '20231027-0470.jpg',
+      '20231214-0091.jpg',
+      '20231214-0177.jpg',
+      '20240119-0255.jpg',
+      '20240125-0396-Edit.jpg',
+      '20240201-0246.jpg',
+      '20240201-0326.jpg',
+      '20240212-0233.jpg',
+      '20240227-0011-Edit-Edit.jpg',
+      '20240320-0669.jpg',
     ],
   };
   document.body.onload = () => {
@@ -44,8 +23,19 @@ function load(category) {
       </circle>
     </svg>`;
 
-    let photosLeftToLoad = photos[category].length - 1;
-    photos[category].forEach(p => {
+    const photosToShow = photos[category].slice()
+      .map(value => ({
+        value,
+        sort: Math.random()
+      }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({
+        value
+      }) => value);
+
+    let photosLeftToLoad = photosToShow.length - 1;
+
+    photosToShow.forEach(p => {
       const container = document.createElement('div');
       container.className = 'image-container';
 
