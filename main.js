@@ -1,18 +1,17 @@
 function load(category) {
   const photos = {
     'people': [
-      '20231023-0049-Edit.jpg',
-      '20231105-1284.jpg',
-      '20231125-0414.jpg',
-      '20231214-0091.jpg',
-      '20231214-0177.jpg',
-      '20240119-0255.jpg',
-      '20240125-0396-Edit.jpg',
-      '20240201-0246.jpg',
-      '20240201-0326.jpg',
-      '20240212-0233.jpg',
-      '20240227-0011-Edit-Edit.jpg',
-      '20240320-0669.jpg',
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpg',
+      '5.jpg',
+      '6.jpg',
+      '7.jpg',
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
+      '11.jpg',
     ],
   };
   document.body.onload = () => {
