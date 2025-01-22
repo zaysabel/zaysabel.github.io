@@ -10,8 +10,6 @@ function load(category) {
       '7.jpg',
       '8.jpg',
       '9.jpg',
-      '10.jpg',
-      '11.jpg',
     ],
   };
   document.body.onload = () => {
@@ -42,13 +40,23 @@ function load(category) {
       img.src = 'photos/' + p;
       img.style.maxHeight = 'calc(' + window.innerHeight + 'px - 10em)';
 
-      img.onload = () => {
+      const loaded = () => {
         container.innerHTML = '';
-        container.appendChild(img);
         photosLeftToLoad--;
 
         if (photosLeftToLoad === 0) {
           document.querySelector('.loader').remove();
+        }
+      }
+
+      img.onload = () => {
+        loaded();
+        container.appendChild(img);
+      };
+      img.onerror = () => {
+        loaded();
+        if (window.location.href.includes('localhost')) {
+          alert('Broken image ' + img.src);
         }
       };
       photosContainer.appendChild(container);
